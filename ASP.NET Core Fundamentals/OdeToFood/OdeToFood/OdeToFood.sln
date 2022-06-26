@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OdeToFood", "OdeToFood\OdeT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OdeToFood.Core", "OdeToFood.Core\OdeToFood.Core.csproj", "{94C289B5-B6E0-4AE1-986D-D035C5DD1A71}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OdeToFood.Data", "OdeToFood.Data\OdeToFood.Data.csproj", "{F78BC577-A48F-4388-9BB6-01666BE34BAB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{94C289B5-B6E0-4AE1-986D-D035C5DD1A71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94C289B5-B6E0-4AE1-986D-D035C5DD1A71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94C289B5-B6E0-4AE1-986D-D035C5DD1A71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F78BC577-A48F-4388-9BB6-01666BE34BAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F78BC577-A48F-4388-9BB6-01666BE34BAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F78BC577-A48F-4388-9BB6-01666BE34BAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F78BC577-A48F-4388-9BB6-01666BE34BAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
