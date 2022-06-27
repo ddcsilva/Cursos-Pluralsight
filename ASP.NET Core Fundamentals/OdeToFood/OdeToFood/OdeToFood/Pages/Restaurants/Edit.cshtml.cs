@@ -56,7 +56,7 @@ namespace OdeToFood.Pages.Restaurants
             }
             else
             {
-                restaurantData.New(Restaurant);
+                restaurantData.Add(Restaurant);
             }
 
             restaurantData.Commit();

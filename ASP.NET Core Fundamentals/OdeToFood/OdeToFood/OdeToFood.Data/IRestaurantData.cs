@@ -8,7 +8,8 @@ namespace OdeToFood.Data
         IEnumerable<Restaurant> GetRestaurantByName(string name);
         Restaurant GetById(int id);
         Restaurant Update(Restaurant updatedRestaurant);
-        Restaurant New(Restaurant newRestaurant);
+        Restaurant Add(Restaurant newRestaurant);
+        Restaurant Delete(int id);
         int Commit();
     }
 }

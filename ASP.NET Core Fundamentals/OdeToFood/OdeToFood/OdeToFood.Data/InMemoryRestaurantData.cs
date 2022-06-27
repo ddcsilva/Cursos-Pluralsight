@@ -36,7 +36,7 @@ namespace OdeToFood.Data
                    select r;
         }
 
-        public Restaurant New(Restaurant newRestaurant)
+        public Restaurant Add(Restaurant newRestaurant)
         {
             restaurants.Add(newRestaurant);
             newRestaurant.Id = restaurants.Max(r => r.Id) + 1;
@@ -52,6 +52,18 @@ namespace OdeToFood.Data
                 restaurant.Name = updatedRestaurant.Name;
                 restaurant.Location = updatedRestaurant.Location;
                 restaurant.Cuisine = updatedRestaurant.Cuisine;
+            }
+
+            return restaurant;
+        }
+
+        public Restaurant Delete(int id)
+        {
+            var restaurant = restaurants.FirstOrDefault(r => r.Id == id);
+
+            if (restaurant != null)
+            {
+                restaurants.Remove(restaurant);
             }
 
             return restaurant;
