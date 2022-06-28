@@ -1,6 +1,7 @@
 ﻿@page
 @model ListModel
 @{
+    ViewData["Title"] = "Restaurants";
 }
 
 <h1>Restaurants</h1>
@@ -18,7 +19,7 @@
     </div>
 </form>
 
-@foreach(var restaurant in Model.Restaurants)
+@foreach (var restaurant in Model.Restaurants)
 {
     <partial name="_Summary" model="restaurant" />
 }
