@@ -76,3 +76,5 @@ C:\Projetos\Pluralsight\Building Web Applications with ASP.NET Core 3 and 5 MVC\
 C:\Projetos\Pluralsight\Building Web Applications with ASP.NET Core 3 and 5 MVC\BethanysPieShop\BethanysPieShop\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Projetos\Pluralsight\Building Web Applications with ASP.NET Core 3 and 5 MVC\BethanysPieShop\BethanysPieShop\obj\Debug\netcoreapp3.1\Razor\Views\Pie\Details.cshtml.g.cs
 C:\Projetos\Pluralsight\Building Web Applications with ASP.NET Core 3 and 5 MVC\BethanysPieShop\BethanysPieShop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_PieCard.cshtml.g.cs
+C:\Projetos\Pluralsight\Building Web Applications with ASP.NET Core 3 and 5 MVC\BethanysPieShop\BethanysPieShop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Projetos\Pluralsight\Building Web Applications with ASP.NET Core 3 and 5 MVC\BethanysPieShop\BethanysPieShop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Carousel.cshtml.g.cs
