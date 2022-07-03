@@ -78,3 +78,4 @@ C:\Projetos\Pluralsight\Building Web Applications with ASP.NET Core 3 and 5 MVC\
 C:\Projetos\Pluralsight\Building Web Applications with ASP.NET Core 3 and 5 MVC\BethanysPieShop\BethanysPieShop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_PieCard.cshtml.g.cs
 C:\Projetos\Pluralsight\Building Web Applications with ASP.NET Core 3 and 5 MVC\BethanysPieShop\BethanysPieShop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Projetos\Pluralsight\Building Web Applications with ASP.NET Core 3 and 5 MVC\BethanysPieShop\BethanysPieShop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Carousel.cshtml.g.cs
+C:\Projetos\Pluralsight\Building Web Applications with ASP.NET Core 3 and 5 MVC\BethanysPieShop\BethanysPieShop\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingCart\Index.cshtml.g.cs
