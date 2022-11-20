@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 
 namespace GameEngine
 {
-    public class InimigoFactory : INotifyPropertyChanged
+    public class Jogador : INotifyPropertyChanged
     {
         private int _saude = 100;
 
@@ -27,7 +27,7 @@ namespace GameEngine
 
         public event EventHandler<EventArgs> JogadorDormiu;
 
-        public InimigoFactory()
+        public Jogador()
         {
             PrimeiroNome = GerarPrimeiroNomeAleatorio();
 

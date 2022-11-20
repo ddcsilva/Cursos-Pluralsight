@@ -8,7 +8,7 @@ namespace GameEngine.Tests
         [Fact]
         public void TornarInexperienteSeNovo()
         {
-            InimigoFactory sut = new InimigoFactory();
+            Jogador sut = new Jogador();
 
             Assert.True(sut.Iniciante);
         }
@@ -16,7 +16,7 @@ namespace GameEngine.Tests
         [Fact]
         public void CalcularNomeCompleto()
         {
-            InimigoFactory sut = new InimigoFactory();
+            Jogador sut = new Jogador();
 
             sut.PrimeiroNome = "Sarah";
             sut.SegundoNome = "Smith";
@@ -27,7 +27,7 @@ namespace GameEngine.Tests
         [Fact]
         public void PossuiNomeCompletoIniciandoPeloPrimeiroNome()
         {
-            InimigoFactory sut = new InimigoFactory();
+            Jogador sut = new Jogador();
 
             sut.PrimeiroNome = "Sarah";
             sut.SegundoNome = "Smith";
@@ -38,7 +38,7 @@ namespace GameEngine.Tests
         [Fact]
         public void PossuiNomeCompletoIniciandoTerminandoPeloSegundoNome()
         {
-            InimigoFactory sut = new InimigoFactory();
+            Jogador sut = new Jogador();
 
             sut.PrimeiroNome = "Sarah";
             sut.SegundoNome = "Smith";
@@ -49,7 +49,7 @@ namespace GameEngine.Tests
         [Fact]
         public void CalcularNomeCompleto_IgnorandoCase()
         {
-            InimigoFactory sut = new InimigoFactory();
+            Jogador sut = new Jogador();
 
             sut.PrimeiroNome = "SARAH";
             sut.SegundoNome = "SMITH";
@@ -60,7 +60,7 @@ namespace GameEngine.Tests
         [Fact]
         public void CalcularNomeCompleto_ExemploSubstring()
         {
-            InimigoFactory sut = new InimigoFactory();
+            Jogador sut = new Jogador();
 
             sut.PrimeiroNome = "Sarah";
             sut.SegundoNome = "Smith";
@@ -72,7 +72,7 @@ namespace GameEngine.Tests
         [Fact]
         public void CalcularNomeCompletoComExpressaoRegular()
         {
-            InimigoFactory sut = new InimigoFactory();
+            Jogador sut = new Jogador();
 
             sut.PrimeiroNome = "Sarah";
             sut.SegundoNome = "Smith";
@@ -83,7 +83,7 @@ namespace GameEngine.Tests
         [Fact]
         public void IniciaComSaudePadrao()
         {
-            InimigoFactory sut = new InimigoFactory();
+            Jogador sut = new Jogador();
 
             Assert.Equal(100, sut.Saude);
         }
@@ -91,7 +91,7 @@ namespace GameEngine.Tests
         [Fact]
         public void IniciaComSaudePadrao_DiferenteZero()
         {
-            InimigoFactory sut = new InimigoFactory();
+            Jogador sut = new Jogador();
 
             Assert.NotEqual(0, sut.Saude);
         }
@@ -99,7 +99,7 @@ namespace GameEngine.Tests
         [Fact]
         public void AumentaSaudeDepoisDormir()
         {
-            InimigoFactory sut = new InimigoFactory();
+            Jogador sut = new Jogador();
 
             sut.Dormir(); // Aguarda o aumento da Saude entre 1 a 100
 
@@ -110,7 +110,7 @@ namespace GameEngine.Tests
         [Fact]
         public void NaoPossuiApelidoPorPadrao()
         {
-            InimigoFactory sut = new InimigoFactory();
+            Jogador sut = new Jogador();
 
             Assert.Null(sut.Apelido);
         }
@@ -118,7 +118,7 @@ namespace GameEngine.Tests
         [Fact]
         public void PossuiLongBow()
         {
-            InimigoFactory sut = new InimigoFactory();
+            Jogador sut = new Jogador();
 
             Assert.Contains("Long Bow", sut.Armas);
         }
@@ -126,7 +126,7 @@ namespace GameEngine.Tests
         [Fact]
         public void NaoPossuiStaffOfWonder()
         {
-            InimigoFactory sut = new InimigoFactory();
+            Jogador sut = new Jogador();
 
             Assert.DoesNotContain("Staff Of Wonder", sut.Armas);
         }
@@ -134,7 +134,7 @@ namespace GameEngine.Tests
         [Fact]
         public void PossuiPeloMenosUmTipoDeSword()
         {
-            InimigoFactory sut = new InimigoFactory();
+            Jogador sut = new Jogador();
 
             Assert.Contains(sut.Armas, weapon => weapon.Contains("Sword"));
         }
@@ -142,7 +142,7 @@ namespace GameEngine.Tests
         [Fact]
         public void PossuiTodasAsArmas()
         {
-            InimigoFactory sut = new InimigoFactory();
+            Jogador sut = new Jogador();
 
             var armasEsperadas = new[]
             {
@@ -157,7 +157,7 @@ namespace GameEngine.Tests
         [Fact]
         public void PossuiArmasPorPadrao()
         {
-            InimigoFactory sut = new InimigoFactory();
+            Jogador sut = new Jogador();
 
             Assert.All(sut.Armas, arma => Assert.False(string.IsNullOrWhiteSpace(arma)));
         }

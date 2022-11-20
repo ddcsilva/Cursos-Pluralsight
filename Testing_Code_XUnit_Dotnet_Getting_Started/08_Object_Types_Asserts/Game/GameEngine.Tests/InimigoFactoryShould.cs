@@ -22,7 +22,7 @@ namespace GameEngine.Tests
 
             Inimigo inimigo = sut.Create("Zombie");
 
-            Assert.IsType<DateTime>(inimigo);
+            Assert.IsNotType<DateTime>(inimigo);
         }
 
         [Fact]
@@ -30,7 +30,7 @@ namespace GameEngine.Tests
         {
             InimigoFactory sut = new InimigoFactory();
 
-            Inimigo inimigo = sut.Create("Zombie King", true);
+            Inimigo inimigo = sut.Create("Rei Zombie", true);
 
             Assert.IsType<Boss>(inimigo);
         }
@@ -40,13 +40,13 @@ namespace GameEngine.Tests
         {
             InimigoFactory sut = new InimigoFactory();
 
-            Inimigo inimigo = sut.Create("Zombie King", true);
+            Inimigo inimigo = sut.Create("Rei Zombie", true);
 
             // Faz o assert e pega o retorno do Cast
             Boss boss = Assert.IsType<Boss>(inimigo);
 
             // Assert adicional com o tipo do Objeto
-            Assert.Equal("Zombie King", boss.Nome);
+            Assert.Equal("Rei Zombie", boss.Nome);
         }
 
         [Fact]
@@ -54,7 +54,7 @@ namespace GameEngine.Tests
         {
             InimigoFactory sut = new InimigoFactory();
 
-            Inimigo inimigo = sut.Create("Zombie King", true);
+            Inimigo inimigo = sut.Create("Rei Zombie", true);
 
             //Assert.IsType<Inimigo>(inimigo);
             Assert.IsAssignableFrom<Inimigo>(inimigo);
