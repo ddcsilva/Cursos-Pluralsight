@@ -6,6 +6,7 @@
   <li>ASP.NET Core 6 Web API
     <ul>
       <li><a href="/ASP-NET-Core-6-Web-API/ASP-NET-Core-Big-Picture/">ASP.NET Core: Big Picture</a></li>
+      <li><a href="/ASP-NET-Core-6-Web-API/ASP-NET-Core-Web-API-Fundamentals/">ASP.NET Core Web API Fundamentals</a></li>
     </ul>
   </li>
 </ul>
