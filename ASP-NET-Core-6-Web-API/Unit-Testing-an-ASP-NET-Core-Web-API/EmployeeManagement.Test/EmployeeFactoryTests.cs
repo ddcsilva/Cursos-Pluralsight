@@ -21,7 +21,7 @@ public class EmployeeFactoryTests
         var employeeFactory = new EmployeeFactory();
 
         // Act
-        var employee = (InternalEmployee)employeeFactory.CreateEmployee("Kevin", "Dockx");
+        var employee = (InternalEmployee)employeeFactory.CreateEmployee("Danilo", "Silva");
 
         // Assert
         Assert.True(employee.Salary >= 2500 && employee.Salary <= 3500, "O salário não está na faixa aceitável.");
@@ -34,7 +34,7 @@ public class EmployeeFactoryTests
         var employeeFactory = new EmployeeFactory();
 
         // Act
-        var employee = (InternalEmployee)employeeFactory.CreateEmployee("Kevin", "Dockx");
+        var employee = (InternalEmployee)employeeFactory.CreateEmployee("Danilo", "Silva");
 
         // Assert
         Assert.True(employee.Salary >= 2500);
@@ -48,9 +48,23 @@ public class EmployeeFactoryTests
         var employeeFactory = new EmployeeFactory();
 
         // Act
-        var employee = (InternalEmployee)employeeFactory.CreateEmployee("Kevin", "Dockx");
+        var employee = (InternalEmployee)employeeFactory.CreateEmployee("Danilo", "Silva");
 
         // Assert
         Assert.InRange(employee.Salary, 2500, 3500);
+    }
+
+    [Fact]
+    public void CreateEmployee_ConstructInternalEmployee_SalaryMustBe2500_PrecisionExample()
+    {
+        // Arrange
+        var employeeFactory = new EmployeeFactory();
+
+        // Act
+        var employee = (InternalEmployee)employeeFactory.CreateEmployee("Danilo", "Silva");
+        employee.Salary = 2500.123m;
+
+        // Assert
+        Assert.Equal(2500, employee.Salary, 0);
     }
 }
