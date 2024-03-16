@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CityInfo.API.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CityInfo.API.Controllers;
 
@@ -7,14 +8,21 @@ namespace CityInfo.API.Controllers;
 public class CidadesController : ControllerBase
 {
     [HttpGet]
-    public JsonResult ObterCidades()
+    public ActionResult<IEnumerable<CidadeDTO>> ObterCidades()
     {
-        return new JsonResult(CidadesStore.Current.Cidades);
+        return Ok(CidadesStore.Current.Cidades);
     }
 
     [HttpGet("{id}")]
-    public JsonResult ObterCidade(int id)
+    public ActionResult<CidadeDTO> ObterCidade(int id)
     {
-        return new JsonResult(CidadesStore.Current.Cidades.FirstOrDefault(c => c.Id == id));
+        var cidadeEncontrada = CidadesStore.Current.Cidades.FirstOrDefault(c => c.Id == id);
+
+        if (cidadeEncontrada == null)
+        {
+            return NotFound();
+        }
+
+        return Ok(cidadeEncontrada);
     }
 }
