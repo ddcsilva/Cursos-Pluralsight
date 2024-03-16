@@ -4,5 +4,9 @@ public class CidadeDTO
 {
     public int Id { get; set; }
     public string Nome { get; set; } = string.Empty;
-    public string? Descrição { get; set; }
+    public string? Descricao { get; set; }
+
+    public int NumeroDePontosTuristicos => PontosTuristicos.Count;
+
+    public ICollection<PontoTuristicoDTO> PontosTuristicos { get; set; } = new List<PontoTuristicoDTO>();
 }
