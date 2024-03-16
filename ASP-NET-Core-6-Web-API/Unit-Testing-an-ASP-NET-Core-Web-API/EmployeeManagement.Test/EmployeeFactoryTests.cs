@@ -6,11 +6,11 @@ namespace EmployeeManagement.Test;
 public class EmployeeFactoryTests
 {
     [Fact]
-    public void CriarFuncionario_ConstrutorInternoFuncionario_SalarioDeveSer2500()
+    public void CreateEmployee_ConstructInternalEmployee_SalaryMustBe2500()
     {
-        var funcionarioFactory = new EmployeeFactory();
-        var funcionario = (InternalEmployee)funcionarioFactory.CreateEmployee("Danilo", "Silva");
+        var employeeFactory = new EmployeeFactory();
+        var employee = (InternalEmployee)employeeFactory.CreateEmployee("Danilo", "Silva");
 
-        Assert.Equal(2500, funcionario.Salary);
+        Assert.Equal(2500, employee.Salary);
     }
 }
