@@ -1,4 +1,5 @@
 ﻿using BethanysPieShop.Models;
+using BethanysPieShop.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BethanysPieShop.Controllers;
@@ -16,7 +17,7 @@ public class TortaController : Controller
 
     public ViewResult Listar()
     {
-        ViewBag.CategoriaAtual = "Torta de Queijo";
-        return View(_tortaRepository.ObterTortas);
+        TortaListaViewModel tortaListaViewModel = new(_tortaRepository.ObterTortas, "Tortas de Queijo");
+        return View(tortaListaViewModel);
     }
 }
