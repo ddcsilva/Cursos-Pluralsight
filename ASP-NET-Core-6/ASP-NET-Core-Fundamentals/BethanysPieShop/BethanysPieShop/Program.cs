@@ -1,4 +1,4 @@
-using BethanysPieShop;
+using BethanysPieShop.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

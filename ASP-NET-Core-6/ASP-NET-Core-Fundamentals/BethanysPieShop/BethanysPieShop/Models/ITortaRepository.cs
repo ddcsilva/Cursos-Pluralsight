@@ -1,4 +1,4 @@
-﻿namespace BethanysPieShop;
+﻿namespace BethanysPieShop.Models;
 
 public interface ITortaRepository
 {
