@@ -1,4 +1,9 @@
+using BethanysPieShop;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddScoped<ICategoriaRepository, MockCategoriaRepository>();
+builder.Services.AddScoped<ITortaRepository, MockTortaRepository>();
 
 builder.Services.AddControllersWithViews();
 
