@@ -4,8 +4,8 @@ public class MockCategoriaRepository : ICategoriaRepository
 {
     public IEnumerable<Categoria> ObterCategorias =>
         [
-            new Categoria {CategoriaId = 1, CategoriaNome = "Torta de Frutas", Descricao = "Tortas de frutas frescas"},
-            new Categoria {CategoriaId = 2, CategoriaNome = "Torta de Queijo", Descricao = "Tortas de queijo cremoso"},
-            new Categoria {CategoriaId = 3, CategoriaNome = "Torta de Carne", Descricao = "Tortas de carne suculenta"}
+            new Categoria{CategoriaId=1, CategoriaNome="Tortas de Frutas", Descricao="Todas as tortas frutadas"},
+            new Categoria{CategoriaId=2, CategoriaNome="Tortas de Queijo", Descricao="Queijo o tempo todo"},
+            new Categoria{CategoriaId=3, CategoriaNome="Tortas Sazonais", Descricao="Entre no clima para uma torta sazonal"}
         ];
 }
