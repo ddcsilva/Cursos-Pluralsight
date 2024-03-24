@@ -1,23 +1,11 @@
-﻿@model BethanysPieShop.ViewModels.TortaListaViewModel;
+﻿@model TortaListaViewModel;
 
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta name="viewport" content="width=device-width">
-    <title>Bethany's Pie Shop</title>
-</head>
-
-<body>
-    <h1>@Model.CategoriaAtual</h1>
-    @foreach (var torta in Model.Tortas)
-    {
-        <div>
-            <h2>@torta.Nome</h2>
-            <h3>@torta.Preco.ToString("c")</h3>
-            <h4>@torta.Categoria.CategoriaNome</h4>
-        </div>
-    }
-</body>
-
-</html>
+<h1>@Model.CategoriaAtual</h1>
+@foreach (var torta in Model.Tortas)
+{
+    <div>
+        <h2>@torta.Nome</h2>
+        <h3>@torta.Preco.ToString("c")</h3>
+        <h4>@torta.Categoria.CategoriaNome</h4>
+    </div>
+}
