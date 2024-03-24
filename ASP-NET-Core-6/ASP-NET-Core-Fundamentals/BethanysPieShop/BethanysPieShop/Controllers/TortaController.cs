@@ -16,6 +16,7 @@ public class TortaController : Controller
 
     public ViewResult Listar()
     {
+        ViewBag.CategoriaAtual = "Torta de Queijo";
         return View(_tortaRepository.ObterTortas);
     }
 }
