@@ -10,7 +10,7 @@ public class Torta
     public decimal Preco { get; set; }
     public string? ImagemUrl { get; set; }
     public string? ImagemThumbnailUrl { get; set; }
-    public bool TortaDaSemana { get; set; }
+    public bool EhTortaDaSemana { get; set; }
     public bool EmEstoque { get; set; }
     public int CategoriaId { get; set; }
     public Categoria Categoria { get; set; } = default!;

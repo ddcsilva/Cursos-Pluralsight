@@ -1,10 +1,11 @@
+using BethanysPieShop;
 using BethanysPieShop.Models;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddScoped<ICategoriaRepository, MockCategoriaRepository>();
-builder.Services.AddScoped<ITortaRepository, MockTortaRepository>();
+builder.Services.AddScoped<ICategoriaRepository, CategoriaRepository>();
+builder.Services.AddScoped<ITortaRepository, TortaRepository>();
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<BethanysPieShopDbContext>(options =>
