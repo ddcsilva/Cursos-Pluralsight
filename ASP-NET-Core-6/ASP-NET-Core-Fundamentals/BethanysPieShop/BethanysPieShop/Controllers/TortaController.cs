@@ -20,4 +20,16 @@ public class TortaController : Controller
         TortaListaViewModel tortaListaViewModel = new(_tortaRepository.ObterTortas, "Tortas de Queijo");
         return View(tortaListaViewModel);
     }
+
+    public IActionResult Detalhes(int id)
+    {
+        var torta = _tortaRepository.ObterTortaPorId(id);
+
+        if (torta == null)
+        {
+            return NotFound();
+        }
+
+        return View(torta);
+    }
 }
