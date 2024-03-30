@@ -9,6 +9,7 @@ import { IProduct } from './product.model';
 export class CatalogComponent {
   public produtos: any;
   public filtro: string = '';
+  public carrinho: IProduct[] = [];
 
   constructor() {
     this.produtos = [
@@ -193,4 +194,10 @@ export class CatalogComponent {
       ? this.produtos
       : this.produtos.filter((produto: any) => produto.category === this.filtro);
   }
+
+  public adicionarAoCarrinho(produto: IProduct): void {
+    this.carrinho.push(produto);
+    console.log(`O produto ${produto.name} foi adicionado ao carrinho.`);
+  }
+
 }
