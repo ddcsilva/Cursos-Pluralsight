@@ -1,0 +1,17 @@
+<div class="product">
+    <div class="product-details">
+        <img [src]="obterCaminhoImagem(produto)" [alt]="produto.name" />
+        <div class="product-info">
+            <div class="name">{{ produto.name }}</div>
+            <div class="description">{{ produto.description }}</div>
+            <div class="category">Tipo de Peça: {{ produto.category }}</div>
+        </div>
+    </div>
+    <div class="price">
+        <div [ngClass]="obterClassesDesconto(produto)">{{ produto.price | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}</div>
+        <div *ngIf=" produto.discount> 0" class="discount">
+            {{ (produto.price * (1 - produto.discount)) | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}
+        </div>
+        <button class="cta" (click)="adicionarAoCarrinho(produto)">Comprar</button>
+    </div>
+</div>

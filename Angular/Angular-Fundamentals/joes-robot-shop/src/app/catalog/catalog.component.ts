@@ -188,14 +188,6 @@ export class CatalogComponent {
     ];
   }
 
-  public obterCaminhoImagem(product: IProduct): string {
-    if (!product) {
-      return '';
-    }
-
-    return '/assets/images/robot-parts/' + product.imageName;
-  }
-
   public obterProdutosFiltrados(): IProduct[] {
     return this.filtro === ''
       ? this.produtos

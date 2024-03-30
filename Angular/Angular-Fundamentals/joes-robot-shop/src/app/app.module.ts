@@ -7,6 +7,7 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { SiteHeaderComponent } from './site-header/site-header.component';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 registerLocaleData(localePt);
 
@@ -15,7 +16,8 @@ registerLocaleData(localePt);
     AppComponent,
     HomeComponent,
     CatalogComponent,
-    SiteHeaderComponent
+    SiteHeaderComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule
