@@ -7,10 +7,11 @@ import { IProduct } from './product.model';
   styleUrls: ['./catalog.component.css']
 })
 export class CatalogComponent {
-  public products: IProduct[];
+  public produtos: IProduct[];
+  public filtro: string = '';
 
   constructor() {
-    this.products = [
+    this.produtos = [
       {
         id: 1,
         description:
@@ -189,5 +190,11 @@ export class CatalogComponent {
 
   public obterCaminhoImagem(product: IProduct): string {
     return '/assets/images/robot-parts/' + product.imageName;
+  }
+
+  public obterProdutosFiltrados(): IProduct[] {
+    return this.filtro === ''
+      ? this.produtos
+      : this.produtos.filter((produto) => produto.category === this.filtro);
   }
 }
