@@ -7,7 +7,7 @@ import { IProduct } from './product.model';
   styleUrls: ['./catalog.component.css']
 })
 export class CatalogComponent {
-  public produtos: IProduct[];
+  public produtos: any;
   public filtro: string = '';
 
   constructor() {
@@ -189,12 +189,16 @@ export class CatalogComponent {
   }
 
   public obterCaminhoImagem(product: IProduct): string {
+    if (!product) {
+      return '';
+    }
+
     return '/assets/images/robot-parts/' + product.imageName;
   }
 
   public obterProdutosFiltrados(): IProduct[] {
     return this.filtro === ''
       ? this.produtos
-      : this.produtos.filter((produto) => produto.category === this.filtro);
+      : this.produtos.filter((produto: any) => produto.category === this.filtro);
   }
 }

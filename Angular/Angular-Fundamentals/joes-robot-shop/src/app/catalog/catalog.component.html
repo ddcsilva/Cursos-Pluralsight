@@ -19,7 +19,10 @@
                     </div>
                 </div>
                 <div class="price">
-                    <div>R$ {{ produto.price.toFixed(2) }}</div>
+                    <div *ngIf="produto.discount === 0">R$ {{ produto.price.toFixed(2) }}</div>
+                    <div *ngIf="produto.discount > 0" class="discount">
+                        R$ {{ (produto.price * (1 - produto.discount)).toFixed(2) }}
+                    </div>
                     <button class="cta">Comprar</button>
                 </div>
             </div>
