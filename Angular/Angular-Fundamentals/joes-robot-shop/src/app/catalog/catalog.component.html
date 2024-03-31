@@ -1,4 +1,6 @@
+<!-- Componente que exibe a lista de produtos disponíveis para compra -->
 <div class="container">
+    <!-- Exibe os filtros de categoria -->
     <div class="filters">
         <a class="button" (click)="filtro='Heads'">Cabeças</a>
         <a class="button" (click)="filtro='Arms'">Braços</a>
@@ -7,8 +9,11 @@
         <a class="button" (click)="filtro=''">Todos</a>
     </div>
 
+    <!-- Exibe a lista de produtos -->
     <ul class="products">
+        <!-- Exibe os detalhes de cada produto, através da lista de produtos filtrados -->
         <li class="product-item" *ngFor="let produto of obterProdutosFiltrados()">
+            <!-- Exibe os detalhes do produto, através do componente app-product-details -->
             <app-product-details [produto]="produto" (comprar)="adicionarAoCarrinho(produto)"></app-product-details>
         </li>
     </ul>

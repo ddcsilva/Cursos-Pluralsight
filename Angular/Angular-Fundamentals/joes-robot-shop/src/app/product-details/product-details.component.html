@@ -1,17 +1,25 @@
+<!-- Componente que exibe os detalhes de um produto -->
 <div class="product">
+    <!-- Exibe os detalhes do produto -->
     <div class="product-details">
-        <img [src]="obterCaminhoImagem(produto)" [alt]="produto.name" />
+        <!-- Exibe a imagem do produto -->
+        <img [src]="obterCaminhoImagem(produto)" [alt]="produto.nome" />
+        <!-- Exibe as informações do produto -->
         <div class="product-info">
-            <div class="name">{{ produto.name }}</div>
-            <div class="description">{{ produto.description }}</div>
-            <div class="category">Tipo de Peça: {{ produto.category }}</div>
+            <div class="name">{{ produto.nome }}</div>
+            <div class="description">{{ produto.descricao }}</div>
+            <div class="category">Tipo de Peça: {{ produto.categoria }}</div>
         </div>
     </div>
+    <!-- Exibe o preço do produto -->
     <div class="price">
-        <div [ngClass]="obterClassesDesconto(produto)">{{ produto.price | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}</div>
-        <div *ngIf=" produto.discount> 0" class="discount">
-            {{ (produto.price * (1 - produto.discount)) | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}
+        <!-- Exibe o preço do produto formatado como moeda -->
+        <div [ngClass]="obterClassesCSSDesconto(produto)">{{ produto.preco | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}</div>
+        <!-- Exibe o preço do produto com desconto formatado como moeda, caso exista -->
+        <div *ngIf=" produto.desconto> 0" class="discount">
+            {{ (produto.preco * (1 - produto.desconto)) | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}
         </div>
+        <!-- Exibe o botão de compra -->
         <button class="cta" (click)="botaoComprarClicado(produto)">Comprar</button>
     </div>
 </div>

@@ -1,9 +1,10 @@
+// Definição da interface de produtos
 export interface IProduct {
     id: number;
-    description: string;
-    name: string;
-    imageName: string;
-    category: string;
-    price: number;
-    discount: number;
+    descricao: string;
+    nome: string;
+    nomeImagem: string;
+    categoria: string;
+    preco: number;
+    desconto: number;
 }
