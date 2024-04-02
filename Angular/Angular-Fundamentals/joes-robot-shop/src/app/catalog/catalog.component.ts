@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IProduct } from './product.model';
 import { ProductService } from './product.service';
+import { CarrinhoService } from '../carrinho.service';
 
 // Componente que representa a página de catálogo de produtos
 @Component({
@@ -11,10 +12,9 @@ import { ProductService } from './product.service';
 export class CatalogComponent {
   public produtos: IProduct[] = []; // Lista de produtos
   public filtro: string = ''; // Filtro de categoria
-  public carrinho: IProduct[] = []; // Carrinho de compras
 
   // Construtor da classe que recebe os serviços de carrinho e de produtos
-  constructor(private produtoService: ProductService) { }
+  constructor(private carrinhoService: CarrinhoService, private produtoService: ProductService) { }
 
   // Método chamado quando o componente é inicializado
   public ngOnInit(): void {
@@ -38,7 +38,6 @@ export class CatalogComponent {
   // Método que adiciona um produto ao carrinho
   public adicionarAoCarrinho(produto: IProduct): void {
     // Adiciona o produto ao carrinho
-    this.carrinho.push(produto);
-    console.log(`O produto ${produto.nome} foi adicionado ao carrinho!`);
+    this.carrinhoService.adicionar(produto);
   }
 }
