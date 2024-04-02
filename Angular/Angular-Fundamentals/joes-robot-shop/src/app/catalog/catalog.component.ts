@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IProduct } from './product.model';
-import { CartService } from '_course-resources/cart/cart.service';
 import { ProductService } from './product.service';
 
 // Componente que representa a página de catálogo de produtos
@@ -33,7 +32,7 @@ export class CatalogComponent {
     // * O método filter() é um método de arrays que retorna um novo array com os elementos que atendem a uma condição
     return this.filtro === ''
       ? this.produtos
-      : this.produtos.filter((produto: any) => produto.category === this.filtro);
+      : this.produtos.filter((produto: any) => produto.categoria === this.filtro);
   }
 
   // Método que adiciona um produto ao carrinho
