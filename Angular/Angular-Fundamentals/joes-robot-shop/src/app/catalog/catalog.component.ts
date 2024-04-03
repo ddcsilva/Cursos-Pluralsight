@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IProduct } from './product.model';
 import { ProductService } from './product.service';
-import { CarrinhoService } from '../carrinho.service';
+import { CarrinhoService } from '../carrinho/carrinho.service';
 
 // Componente que representa a página de catálogo de produtos
 @Component({

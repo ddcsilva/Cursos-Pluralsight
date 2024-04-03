@@ -9,6 +9,7 @@ import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
 
 registerLocaleData(localePt);
 
@@ -18,7 +19,8 @@ registerLocaleData(localePt);
     HomeComponent,
     CatalogComponent,
     SiteHeaderComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    CarrinhoComponent
   ],
   imports: [
     BrowserModule,
