@@ -16,7 +16,7 @@ builder.Services.AddDbContext<BethanysPieShopDbContext>(options =>
 {
     // UseSqlServer: é um método de extensão que configura o provedor de banco de dados SQL Server
     options.UseSqlServer(
-        builder.Configuration["BethanysPieShopDbContextConnection"]);
+        builder.Configuration.GetConnectionString("BethanysPieShopDbContextConnection"));
 });
 
 // Build: é um método que cria uma instância de WebApplication, responsável por gerenciar a aplicação web
