@@ -35,5 +35,7 @@ if (app.Environment.IsDevelopment())
 // MapDefaultControllerRoute: é um método de extensão que mapeia a rota padrão para controllers
 app.MapDefaultControllerRoute();
 
+DbInitializer.Seed(app);
+
 // Run: é um método que inicia a aplicação web
 app.Run();
