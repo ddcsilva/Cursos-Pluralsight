@@ -1,5 +1,11 @@
+using BethanysPieShop.Models;
+
 // WebApplication.CreateBuilder: é um método de extensão que cria um WebApplicationBuilder, responsável por configurar a aplicação web
 var builder = WebApplication.CreateBuilder(args);
+
+// AddScoped: é um método de extensão que adiciona um serviço ao contêiner de injeção de dependência com um tempo de vida de escopo
+builder.Services.AddScoped<ICategoriaRepository, MockCategoriaRepository>();
+builder.Services.AddScoped<ITortaRepository, MockTortaRepository>();
 
 // AddControllerWithViews: é um método de extensão que adiciona suporte para controllers e views
 builder.Services.AddControllersWithViews();
