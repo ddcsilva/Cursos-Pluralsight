@@ -1,11 +1,27 @@
-﻿@model TortaListaViewModel
+﻿@model TortaListaViewModel;
 
 <h1>@Model.CategoriaAtual</h1>
-@foreach (var torta in Model.Tortas)
-{
-    <div>
-        <h2>@torta.Nome</h2>
-        <h3>@torta.Preco.ToString("c")</h3>
-        <h4>@torta.Categoria.CategoriaNome</h4>
-    </div>
-}
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @foreach (var torta in Model.Tortas)
+    {
+        <div class="col">
+            <div class="card pie-card">
+                <img src="@torta.ImagemThumbnailUrl" class="card-img-top" alt="@torta.Nome">
+                <div class="card-body pie-button">
+                    <h4 class="d-grid">
+                    </h4>
+
+                    <div class="d-flex justify-content-between mt-2">
+                        <h2 class="text-start">
+                            <a class="pie-link">@torta.Nome</a>
+                        </h2>
+                        <h5 class="text-nowrap">
+                            @torta.Preco.ToString("c")
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
