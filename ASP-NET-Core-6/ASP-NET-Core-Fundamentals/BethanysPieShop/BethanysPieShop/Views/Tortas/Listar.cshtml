@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BethanysPieShop.Models.Torta>
+﻿@model BethanysPieShop.ViewModels.TortaListaViewModel
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -10,8 +10,8 @@
 </head>
 
 <body>
-    <h1>@ViewBag.CategoriaAtual</h1>
-    @foreach (var torta in Model)
+    <h1>@Model.CategoriaAtual</h1>
+    @foreach (var torta in Model.Tortas)
     {
         <div>
             <h2>@torta.Nome</h2>
