@@ -16,7 +16,12 @@ public class TortasController : Controller
 
     public IActionResult Listar()
     {
+        // ViewBag: é uma propriedade que fornece um mecanismo para passar dados do controlador para a view
+        ViewBag.CategoriaAtual = "Tortas de Queijo";
+
         var tortas = _tortaRepository.ObterTortas;
+
+        // View: é um método que retorna uma ViewResult, que representa uma página HTML
         return View(tortas);
     }
 }
