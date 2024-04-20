@@ -1,4 +1,5 @@
 using BethanysPieShop.Models;
+using Microsoft.EntityFrameworkCore;
 
 // WebApplication.CreateBuilder: é um método de extensão que cria um WebApplicationBuilder, responsável por configurar a aplicação web
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,14 @@ builder.Services.AddScoped<ITortaRepository, MockTortaRepository>();
 
 // AddControllerWithViews: é um método de extensão que adiciona suporte para controllers e views
 builder.Services.AddControllersWithViews();
+
+// AddDbContext: é um método de extensão que adiciona um contexto de banco de dados ao contêiner de injeção de dependência
+builder.Services.AddDbContext<BethanysPieShopDbContext>(options =>
+{
+    // UseSqlServer: é um método de extensão que configura o provedor de banco de dados SQL Server
+    options.UseSqlServer(
+        builder.Configuration["BethanysPieShopDbContextConnection"]);
+});
 
 // Build: é um método que cria uma instância de WebApplication, responsável por gerenciar a aplicação web
 var app = builder.Build();
