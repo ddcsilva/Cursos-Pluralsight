@@ -10,6 +10,7 @@ import localePt from '@angular/common/locales/pt';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
+import { AppRoutingModule } from './app-routing.module';
 
 registerLocaleData(localePt);
 
@@ -24,7 +25,8 @@ registerLocaleData(localePt);
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

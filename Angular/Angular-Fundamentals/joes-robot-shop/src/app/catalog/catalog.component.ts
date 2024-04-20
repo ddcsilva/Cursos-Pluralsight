@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IProduct } from './product.model';
 import { ProductService } from './product.service';
 import { CarrinhoService } from '../carrinho/carrinho.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 // Componente que representa a página de catálogo de produtos
 @Component({
@@ -13,8 +14,13 @@ export class CatalogComponent {
   public produtos: IProduct[] = []; // Lista de produtos
   public filtro: string = ''; // Filtro de categoria
 
-  // Construtor da classe que recebe os serviços de carrinho e de produtos
-  constructor(private carrinhoService: CarrinhoService, private produtoService: ProductService) { }
+  // Construtor da classe que recebe os serviços de carrinho, produtos e roteamento
+  constructor(
+    private carrinhoService: CarrinhoService,
+    private produtoService: ProductService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
   // Método chamado quando o componente é inicializado
   public ngOnInit(): void {
@@ -22,6 +28,10 @@ export class CatalogComponent {
     // * O método obterProdutos() retorna um Observable, que é uma forma de trabalhar com assincronismo em Angular
     this.produtoService.obterProdutos().subscribe((produtos: IProduct[]) => {
       this.produtos = produtos;
+    });
+    this.route.params.subscribe((params) => {
+      // Obtém o filtro da URL e o armazena na variável filtro se existir, senão, armazena uma string vazia
+      this.filtro = params['filtro'] ?? '';
     });
   }
 
@@ -39,5 +49,7 @@ export class CatalogComponent {
   public adicionarAoCarrinho(produto: IProduct): void {
     // Adiciona o produto ao carrinho
     this.carrinhoService.adicionar(produto);
+    // Navega para a página de carrinho
+    this.router.navigate(['/carrinho']);
   }
 }

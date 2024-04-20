@@ -1,10 +1,10 @@
 <div class="container">
   <div class="left">
     <img class="logo" src="/assets/images/logo.png" alt="Logo" />
-    <a>Início</a>
-    <a href="">Catálogo</a>
+    <a routerLink="/home" routerLinkActive="active">Início</a>
+    <a [routerLink]="['/catalogo', '']" routerLinkActive="active">Catálogo</a>
     <div class="cart">
-      <a href="">Carrinho</a>
+      <a routerLink="/carrinho" routerLinkActive="active">Carrinho</a>
     </div>
   </div>
   <div class="right">
