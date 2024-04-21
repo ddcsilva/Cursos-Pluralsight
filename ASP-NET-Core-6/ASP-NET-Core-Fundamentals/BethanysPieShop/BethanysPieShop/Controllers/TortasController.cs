@@ -29,4 +29,19 @@ public class TortasController : Controller
         // View: é um método que retorna uma ViewResult, que representa uma página HTML
         return View(tortaListaViewModel);
     }
+
+    public IActionResult Detalhes(int id)
+    {
+        // ObterTortaPorId: é um método que retorna uma torta com base no id
+        var torta = _tortaRepository.ObterTortaPorId(id);
+
+        // Se a torta for nula, retorna um NotFoundResult, que representa um código de status HTTP 404
+        if (torta == null)
+        {
+            return NotFound();
+        }
+
+        // View: é um método que retorna uma ViewResult, que representa uma página HTML
+        return View(torta);
+    }
 }
