@@ -1,0 +1,20 @@
+﻿@model Torta
+
+<div class="col">
+    <div class="card pie-card">
+        <img src="@Model.ImagemThumbnailUrl" class="card-img-top" alt="@Model.Nome">
+        <div class="card-body pie-button">
+            <h4 class="d-grid">
+            </h4>
+
+            <div class="d-flex justify-content-between mt-2">
+                <h2 class="text-start">
+                    <a asp-controller="Tortas" asp-action="Detalhes" asp-route-id="@Model.TortaId" class="pie-link">@Model.Nome</a>
+                </h2>
+                <h5 class="text-nowrap">
+                    @Model.Preco.ToString("c")
+                </h5>
+            </div>
+        </div>
+    </div>
+</div>
