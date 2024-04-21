@@ -1,6 +1,9 @@
-﻿namespace BethanysPieShop.Models;
+﻿using BethanysPieShop.Models;
+using BethanysPieShop.Repositories.Interfaces;
 
-public class MockCategoriaRepository : ICategoriaRepository
+namespace BethanysPieShop.Repositories;
+
+public class CategoriaMockRepository : ICategoriaRepository
 {
     public IEnumerable<Categoria> ObterCategorias =>
         [

@@ -1,4 +1,4 @@
-﻿using BethanysPieShop.Models;
+﻿using BethanysPieShop.Repositories.Interfaces;
 using BethanysPieShop.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 

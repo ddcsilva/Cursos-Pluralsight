@@ -2,17 +2,18 @@
 using BethanysPieShop.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace BethanysPieShop.Migrations
 {
     [DbContext(typeof(BethanysPieShopDbContext))]
-    partial class BethanysPieShopDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240421193725_AdicionandoCarrinhoCompraItens")]
+    partial class AdicionandoCarrinhoCompraItens
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,15 +22,15 @@ namespace BethanysPieShop.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("BethanysPieShop.Models.CarrinhoItem", b =>
+            modelBuilder.Entity("BethanysPieShop.Models.CarrinhoCompraItens", b =>
                 {
-                    b.Property<int>("CarrinhoItemId")
+                    b.Property<int>("CarrinhoCompraItensId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CarrinhoItemId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CarrinhoCompraItensId"));
 
-                    b.Property<string>("CarrinhoId")
+                    b.Property<string>("CarrinhoCompraId")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Quantidade")
@@ -38,11 +39,11 @@ namespace BethanysPieShop.Migrations
                     b.Property<int>("TortaId")
                         .HasColumnType("int");
 
-                    b.HasKey("CarrinhoItemId");
+                    b.HasKey("CarrinhoCompraItensId");
 
                     b.HasIndex("TortaId");
 
-                    b.ToTable("CarrinhoItens");
+                    b.ToTable("CarrinhoCompraItens");
                 });
 
             modelBuilder.Entity("BethanysPieShop.Models.Categoria", b =>
@@ -111,7 +112,7 @@ namespace BethanysPieShop.Migrations
                     b.ToTable("Tortas");
                 });
 
-            modelBuilder.Entity("BethanysPieShop.Models.CarrinhoItem", b =>
+            modelBuilder.Entity("BethanysPieShop.Models.CarrinhoCompraItens", b =>
                 {
                     b.HasOne("BethanysPieShop.Models.Torta", "Torta")
                         .WithMany()

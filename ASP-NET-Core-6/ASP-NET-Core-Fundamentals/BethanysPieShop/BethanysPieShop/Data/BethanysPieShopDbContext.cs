@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BethanysPieShop.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace BethanysPieShop.Models;
+namespace BethanysPieShop.Data;
 
 public class BethanysPieShopDbContext : DbContext
 {
@@ -8,4 +9,5 @@ public class BethanysPieShopDbContext : DbContext
 
     public DbSet<Torta> Tortas { get; set; }
     public DbSet<Categoria> Categorias { get; set; }
+    public DbSet<CarrinhoItem> CarrinhoItens { get; set; }
 }

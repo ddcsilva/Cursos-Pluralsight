@@ -1,7 +1,9 @@
-﻿
+﻿using BethanysPieShop.Data;
+using BethanysPieShop.Models;
+using BethanysPieShop.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace BethanysPieShop.Models;
+namespace BethanysPieShop.Repositories;
 
 public class TortaRepository : ITortaRepository
 {

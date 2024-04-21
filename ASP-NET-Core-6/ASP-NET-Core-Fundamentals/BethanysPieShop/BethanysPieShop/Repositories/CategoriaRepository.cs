@@ -1,5 +1,8 @@
-﻿
-namespace BethanysPieShop.Models;
+﻿using BethanysPieShop.Data;
+using BethanysPieShop.Models;
+using BethanysPieShop.Repositories.Interfaces;
+
+namespace BethanysPieShop.Repositories;
 
 public class CategoriaRepository : ICategoriaRepository
 {

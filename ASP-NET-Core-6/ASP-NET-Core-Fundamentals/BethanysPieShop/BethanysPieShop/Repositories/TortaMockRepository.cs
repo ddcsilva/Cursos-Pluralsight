@@ -1,10 +1,13 @@
-﻿namespace BethanysPieShop.Models;
+﻿using BethanysPieShop.Models;
+using BethanysPieShop.Repositories.Interfaces;
 
-public class MockTortaRepository : ITortaRepository
+namespace BethanysPieShop.Repositories;
+
+public class TortaMockRepository : ITortaRepository
 {
     private readonly ICategoriaRepository _categoriaRepository;
 
-    public MockTortaRepository(ICategoriaRepository categoriaRepository)
+    public TortaMockRepository(ICategoriaRepository categoriaRepository)
     {
         _categoriaRepository = categoriaRepository;
     }

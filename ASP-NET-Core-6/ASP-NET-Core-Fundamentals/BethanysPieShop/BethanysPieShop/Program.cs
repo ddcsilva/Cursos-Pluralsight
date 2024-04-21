@@ -1,4 +1,8 @@
+using BethanysPieShop.Data;
 using BethanysPieShop.Models;
+using BethanysPieShop.Models.Interfaces;
+using BethanysPieShop.Repositories;
+using BethanysPieShop.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 // WebApplication.CreateBuilder: é um método de extensão que cria um WebApplicationBuilder, responsável por configurar a aplicação web
@@ -7,6 +11,12 @@ var builder = WebApplication.CreateBuilder(args);
 // AddScoped: é um método de extensão que adiciona um serviço ao contêiner de injeção de dependência com um tempo de vida de escopo
 builder.Services.AddScoped<ICategoriaRepository, CategoriaRepository>();
 builder.Services.AddScoped<ITortaRepository, TortaRepository>();
+builder.Services.AddScoped<ICarrinho, Carrinho>(c => Carrinho.ObterCarrinho(c));
+
+// AddSession: é um método de extensão que adiciona suporte para sessões
+builder.Services.AddSession();
+// AddHttpContextAccessor: é um método de extensão que adiciona suporte para acessar o contexto HTTP
+builder.Services.AddHttpContextAccessor();
 
 // AddControllerWithViews: é um método de extensão que adiciona suporte para controllers e views
 builder.Services.AddControllersWithViews();
@@ -24,6 +34,9 @@ var app = builder.Build();
 
 // UseStaticFiles: é um método de extensão que adiciona suporte para arquivos estáticos (Pasta: wwwroot)
 app.UseStaticFiles();
+
+// UseSession: é um método de extensão que adiciona suporte para sessões
+app.UseSession();
 
 // IsDevelopment: é uma propriedade que verifica se a aplicação está em ambiente de desenvolvimento
 if (app.Environment.IsDevelopment())

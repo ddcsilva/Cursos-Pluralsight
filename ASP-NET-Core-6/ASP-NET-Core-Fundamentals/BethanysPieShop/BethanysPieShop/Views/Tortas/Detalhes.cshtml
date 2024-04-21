@@ -12,7 +12,7 @@
         <h3 class="pull-right">@Model.Preco.ToString("c")</h3>
         <div class="addToCart">
             <p class="button">
-
+                <a class="btn btn-secondary" asp-controller="Carrinho" asp-action="AdicionarAoCarrinho" asp-route-tortaId="@Model.TortaId">Adicionar ao Carrinho</a>
             </p>
         </div>
     </div>
