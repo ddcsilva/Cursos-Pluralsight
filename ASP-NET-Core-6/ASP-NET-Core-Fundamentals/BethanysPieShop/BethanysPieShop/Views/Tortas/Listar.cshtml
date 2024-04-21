@@ -14,7 +14,7 @@
 
                     <div class="d-flex justify-content-between mt-2">
                         <h2 class="text-start">
-                            <a class="pie-link">@torta.Nome</a>
+                            <a class="pie-link" asp-controller="Tortas" asp-action="Detalhes" asp-route-id="@torta.TortaId">@torta.Nome</a>
                         </h2>
                         <h5 class="text-nowrap">
                             @torta.Preco.ToString("c")
