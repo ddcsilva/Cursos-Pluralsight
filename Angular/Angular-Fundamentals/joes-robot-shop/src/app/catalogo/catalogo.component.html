@@ -1,14 +1,14 @@
 <div class="container">
     <div class="filters">
-        <a class="button">Cabeças</a>
-        <a class="button">Braços</a>
-        <a class="button">Troncos</a>
-        <a class="button">Bases</a>
-        <a class="button">Todos</a>
+        <a class="button" (click)="filtro = 'Cabeças'">Cabeças</a>
+        <a class="button" (click)="filtro = 'Braços'">Braços</a>
+        <a class="button" (click)="filtro = 'Troncos'">Troncos</a>
+        <a class="button" (click)="filtro = 'Bases'">Bases</a>
+        <a class="button" (click)="filtro = ''">Todos</a>
     </div>
 
     <ul class="products">
-        <li class="product-item">
+        <li class="product-item" *ngFor="let produto of obterProdutosFiltrados()">
             <div class="product">
                 <div class="product-details">
                     <img [src]="obterUrlImagem(produto)" [alt]="produto.nome" />
@@ -19,7 +19,8 @@
                     </div>
                 </div>
                 <div class="price">
-                    <div>R$ {{ produto.preco.toFixed(2) }}</div>
+                    <div *ngIf="produto.desconto === 0">{{ produto.preco | currency:'BRL' }}</div>
+                    <div *ngIf="produto.desconto > 0" class="discount">{{ (produto.preco * (1 - produto.desconto)) | currency:'BRL' }}</div>
                     <button class="cta">Comprar</button>
                 </div>
             </div>
