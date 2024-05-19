@@ -63,8 +63,7 @@
               "browserTarget": "joes-robot-shop:build:production"
             },
             "development": {
-              "browserTarget": "joes-robot-shop:build:development",
-              "proxyConfig": "src/proxy.conf.json"
+              "browserTarget": "joes-robot-shop:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -95,8 +94,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": "5352cfa2-b6a5-4e29-804a-1cc157aed3ee"
   }
 }
