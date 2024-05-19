@@ -11,15 +11,15 @@
         <li class="product-item">
             <div class="product">
                 <div class="product-details">
-                    <img src="" alt="" />
+                    <img [src]="obterUrlImagem(produto)" [alt]="produto.nome" />
                     <div class="product-info">
-                        <div class="name"></div>
-                        <div class="description"></div>
-                        <div class="category">Tipo de Parte: </div>
+                        <div class="name">{{ produto.nome }}</div>
+                        <div class="description">{{ produto.descricao }}</div>
+                        <div class="category">Tipo de Parte: {{ produto.categoria }}</div>
                     </div>
                 </div>
                 <div class="price">
-                    <div></div>
+                    <div>R$ {{ produto.preco.toFixed(2) }}</div>
                     <button class="cta">Comprar</button>
                 </div>
             </div>
